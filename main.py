@@ -18,9 +18,9 @@ elif: z==False
    print('Não é um triângulo')
 
 else:
-   if a == b and b == c and c == a
+   if: a == b and b == c and c == a
       print('Equilátero')
-   if a != b and b != c and c != a
+   elif: a != b and b != c and c != a
       print('Escaleno')
-   if (a==b!=c) and (a==c!=b) and (b==c!=a)
+   elif: (a==b!=c) and (a==c!=b) and (b==c!=a)
       print('Isóceles')
