@@ -1,0 +1,202 @@
+============================= test session starts ==============================
+platform linux -- Python 3.10.10, pytest-7.3.1, pluggy-1.0.0
+rootdir: /home/seuronao/Documents/Triangle Classifier-04-24-2023-04-46-29/cauafreitas7
+collected 12 items
+
+test_main.py ...FFF...FFF                                                [100%]
+
+=================================== FAILURES ===================================
+_________________________ test_isósceles[test_input0] __________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7eb68ee0>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["2", "2", "3"],
+            ["3", "2", "2"],
+            ["2", "3", "2"],
+        ],
+    )
+    def test_isósceles(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" not in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'N\xe3o \xe9...tri\xe2ngulo' not in 'N\xe3o \xe9...tri\xe2ngulo'
+E         'Não é um triângulo' is contained here:
+E           Não é um triângulo
+
+test_main.py:54: AssertionError
+_________________________ test_isósceles[test_input1] __________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7eb5b820>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["2", "2", "3"],
+            ["3", "2", "2"],
+            ["2", "3", "2"],
+        ],
+    )
+    def test_isósceles(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" not in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'N\xe3o \xe9...tri\xe2ngulo' not in 'N\xe3o \xe9...tri\xe2ngulo'
+E         'Não é um triângulo' is contained here:
+E           Não é um triângulo
+
+test_main.py:54: AssertionError
+_________________________ test_isósceles[test_input2] __________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7ed271f0>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["2", "2", "3"],
+            ["3", "2", "2"],
+            ["2", "3", "2"],
+        ],
+    )
+    def test_isósceles(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" not in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'N\xe3o \xe9...tri\xe2ngulo' not in 'N\xe3o \xe9...tri\xe2ngulo'
+E         'Não é um triângulo' is contained here:
+E           Não é um triângulo
+
+test_main.py:54: AssertionError
+_____________________ test_não_é_um_triângulo[test_input0] _____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7eb59570>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["1", "2", "3"],
+            ["1", "3", "2"],
+            ["3", "1", "2"],
+        ],
+    )
+    def test_não_é_um_triângulo(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não é um triângulo' in 'Escaleno'
+E        +  where 'Escaleno' = <built-in method strip of str object at 0x7f2e7eba3b30>()
+E        +    where <built-in method strip of str object at 0x7f2e7eba3b30> = 'Escaleno\n'.strip
+E        +      where 'Escaleno\n' = <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f2e0>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f2e0> = <_io.StringIO object at 0x7f2e7eb9f2e0>.getvalue
+
+test_main.py:104: AssertionError
+_____________________ test_não_é_um_triângulo[test_input1] _____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7ed26fb0>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["1", "2", "3"],
+            ["1", "3", "2"],
+            ["3", "1", "2"],
+        ],
+    )
+    def test_não_é_um_triângulo(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não é um triângulo' in 'Escaleno'
+E        +  where 'Escaleno' = <built-in method strip of str object at 0x7f2e7eb71370>()
+E        +    where <built-in method strip of str object at 0x7f2e7eb71370> = 'Escaleno\n'.strip
+E        +      where 'Escaleno\n' = <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f370>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f370> = <_io.StringIO object at 0x7f2e7eb9f370>.getvalue
+
+test_main.py:104: AssertionError
+_____________________ test_não_é_um_triângulo[test_input2] _____________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7f2e7eb585b0>
+test_input = []
+
+    @pytest.mark.parametrize(
+        "test_input",
+        [
+            ["1", "2", "3"],
+            ["1", "3", "2"],
+            ["3", "1", "2"],
+        ],
+    )
+    def test_não_é_um_triângulo(monkeypatch: MonkeyPatch, test_input: str):
+        mocked_input = lambda prompt="": test_input.pop(0)
+        mocked_stdout = io.StringIO()
+    
+        with monkeypatch.context() as m:
+            m.setattr(builtins, "input", mocked_input)
+            m.setattr(sys, "stdout", mocked_stdout)
+    
+            sys.modules.pop("main", None)
+            importlib.import_module(name="main", package="files")
+    
+>       assert "Não é um triângulo" in mocked_stdout.getvalue().strip()
+E       AssertionError: assert 'Não é um triângulo' in 'Escaleno'
+E        +  where 'Escaleno' = <built-in method strip of str object at 0x7f2e7ecb80f0>()
+E        +    where <built-in method strip of str object at 0x7f2e7ecb80f0> = 'Escaleno\n'.strip
+E        +      where 'Escaleno\n' = <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f490>()
+E        +        where <built-in method getvalue of _io.StringIO object at 0x7f2e7eb9f490> = <_io.StringIO object at 0x7f2e7eb9f490>.getvalue
+
+test_main.py:104: AssertionError
+=========================== short test summary info ============================
+FAILED test_main.py::test_isósceles[test_input0] - AssertionError: assert 'N\...
+FAILED test_main.py::test_isósceles[test_input1] - AssertionError: assert 'N\...
+FAILED test_main.py::test_isósceles[test_input2] - AssertionError: assert 'N\...
+FAILED test_main.py::test_não_é_um_triângulo[test_input0] - AssertionError: a...
+FAILED test_main.py::test_não_é_um_triângulo[test_input1] - AssertionError: a...
+FAILED test_main.py::test_não_é_um_triângulo[test_input2] - AssertionError: a...
+========================= 6 failed, 6 passed in 0.07s ==========================
