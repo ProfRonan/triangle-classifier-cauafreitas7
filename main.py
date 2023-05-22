@@ -13,7 +13,5 @@ elif a != b and b != c and c != a:
       print('Escaleno')
 elif (a==b!=c) and (a==c!=b) and (b==c!=a):
       print('Isóceles')
-
-else: 
-   x==False or y==False or z==False 
-   print('Não é um triângulo')
+elif x==False or y==False or z==False:
+      print('Não é um triângulo')
