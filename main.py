@@ -8,7 +8,7 @@ if c + b > a and a + c > b and a + b > c:
             print('Equilátero')
       if a != b and b != c and c != a:
             print('Escaleno')
-      if (a == b and b != c) or (a == c and c != b) or (b == c and c != a):
+      if a == b and b != c or a == c and c != b or b == c and c != a:
             print('Isóceles')
 else:
       print('Não é um triângulo') 
