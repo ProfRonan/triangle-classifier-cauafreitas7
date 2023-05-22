@@ -3,7 +3,7 @@ a = int(input('Digite um número a: '))
 b = int(input('Digite um numero b: '))
 c = int(input('Digite um numero c: '))
 
-if x = (c + b > a) and y = (a + c > b) and z = (a + b > c):
+if c + b > a and a + c > b and a + b > c:
       if a == b and b == c and c == a:
             print('Equilátero')
       if a != b and b != c and c != a:
